@@ -9,7 +9,7 @@ db_config = {
     "user": "root",
     "password": "12345",
     "host": "localhost",
-    "database": "Users"
+    "database": "todolist"
 }
 
 
@@ -28,7 +28,7 @@ def login():
         cursor = connection.cursor(dictionary=True)
 
             # Search for the user
-        query = "SELECT * FROM Users WHERE name = %s AND senha = %s"
+        query = "SELECT * FROM Users WHERE nome = %s AND senha = %s"
         cursor.execute(query, (name, senha))
         user = cursor.fetchone()
 
